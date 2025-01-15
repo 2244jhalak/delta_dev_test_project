@@ -4,6 +4,7 @@ import Home from "../components/Home/Home";
 import AddPost from "../components/add/AddPost";
 import ViewPost from "../components/view/ViewPost";
 import PostDetails from "../components/details/PostDetails";
+import Dashboard from "../components/demo/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path : "/posts/:id",
                 element : <PostDetails />
+            },
+            {
+                path : "/demo",
+                element : <Dashboard />
             }
         ]
     }

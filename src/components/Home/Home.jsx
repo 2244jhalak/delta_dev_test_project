@@ -26,6 +26,7 @@ const Home = () => {
           <span className="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
         )}
       </Link>
+      <Link className="btn btn-primary" to="/demo">Demo Dashboard With scroll bar</Link>
     </div>
   );
 };
