@@ -6,6 +6,7 @@ const ViewPost = () => {
     const [posts, setPosts] = useState([]);
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
+    const [loading, setLoading] = useState(true);
     
     // Fetch posts from API
     useEffect(() => {
@@ -15,6 +16,8 @@ const ViewPost = () => {
                 setPosts(response.data);
             } catch (error) {
                 console.error(error);
+            } finally {
+                setLoading(false)
             }
         };
         fetchPosts();
@@ -36,6 +39,11 @@ const ViewPost = () => {
         }
         navigate(`/posts/${postId}`);
     };
+    if (loading) {
+        return <div className="flex items-center justify-center mt-20">
+          <span className="loading loading-infinity loading-lg"></span>
+        </div>;
+    }
 
     return (
         <div>
